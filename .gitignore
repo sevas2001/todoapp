@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+# Tus tareas reales: descomenta la siguiente línea si NO quieres subirlas nunca al repo público
+# tareas.json

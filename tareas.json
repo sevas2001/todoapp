@@ -1,0 +1,12 @@
+{
+  "_formato": "Cada tarea: id (unico, minusculas-con-guiones), titulo, area, estado (pendiente|en-curso|hecha), bloqueada_por (lista de ids), prioridad (1 alta .. 3 baja), notas (opcional), fecha (opcional AAAA-MM-DD). Una tarea esta 'bloqueada' si alguna de bloqueada_por no esta hecha.",
+  "areas": ["Trabajo", "Estudio", "Personal"],
+  "tareas": [
+    {"id": "ejemplo-diseno", "titulo": "Diseñar la solución", "area": "Trabajo", "estado": "hecha", "bloqueada_por": [], "prioridad": 1},
+    {"id": "ejemplo-implementar", "titulo": "Implementar la solución", "area": "Trabajo", "estado": "en-curso", "bloqueada_por": ["ejemplo-diseno"], "prioridad": 1, "notas": "Esta tarea está en curso."},
+    {"id": "ejemplo-tests", "titulo": "Escribir tests", "area": "Trabajo", "estado": "pendiente", "bloqueada_por": ["ejemplo-implementar"], "prioridad": 2, "notas": "Sale bloqueada hasta que termine 'Implementar la solución'."},
+    {"id": "ejemplo-entrega", "titulo": "Entregar al cliente", "area": "Trabajo", "estado": "pendiente", "bloqueada_por": ["ejemplo-implementar", "ejemplo-tests"], "prioridad": 1, "fecha": "2030-01-31"},
+    {"id": "ejemplo-leer", "titulo": "Leer un artículo", "area": "Estudio", "estado": "pendiente", "bloqueada_por": [], "prioridad": 3},
+    {"id": "ejemplo-recado", "titulo": "Hacer un recado", "area": "Personal", "estado": "pendiente", "bloqueada_por": [], "prioridad": 2}
+  ]
+}

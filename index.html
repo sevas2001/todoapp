@@ -1,0 +1,32 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>ToDoApp</title>
+<style>
+body{background:#0d1117;color:#e6edf3;font:14px system-ui,sans-serif;margin:0;padding:24px;max-width:1200px;margin:auto}
+h1{margin:0 0 4px} h2{margin-top:32px;border-bottom:1px solid #30363d;padding-bottom:6px}
+h3 small{color:#8b949e;font-weight:normal}
+.top{display:flex;gap:16px;flex-wrap:wrap;margin-top:16px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:12px 16px;flex:1;min-width:220px}
+.card h4{margin:0 0 6px;color:#8b949e;font-weight:600;font-size:12px;text-transform:uppercase}
+.card ul{margin:0;padding-left:18px}
+.bar{height:8px;background:#30363d;border-radius:4px;overflow:hidden} .bar i{display:block;height:100%;background:#3fb950}
+section{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:4px 16px 8px;margin:12px 0}
+ul{list-style:none;padding:0} li{padding:5px 0;border-bottom:1px solid #21262d} li:last-child{border:0}
+li.hecha{color:#8b949e;text-decoration:line-through} li.bloqueada{color:#8b949e} li.en-curso{color:#e3b341}
+.m{display:inline-block;width:20px} .n{margin-left:20px;color:#8b949e;font-size:12px;text-decoration:none}
+.p{font-size:10px;border-radius:4px;padding:1px 4px;background:#30363d;margin-right:4px} .p1{background:#da3633} .p2{background:#9e6a03}
+.g{overflow:auto;background:#161b22;border:1px solid #30363d;border-radius:10px;padding:8px}
+.leyenda span{margin-right:14px;font-size:12px}
+</style></head><body>
+<h1>ToDoApp</h1>
+<div style="color:#8b949e">1/6 hechas · generado desde <code>tareas.json</code></div>
+<div class="bar" style="margin-top:8px"><i style="width:16%"></i></div>
+<div class="top">
+<div class="card"><h4>En curso</h4><ul><li>Implementar la solución</li></ul></div>
+<div class="card"><h4>Siguiente libre (por prioridad)</h4><ul><li>Hacer un recado</li><li>Leer un artículo</li></ul></div>
+</div>
+<h2>Dependencias</h2>
+<div class="leyenda"><span style="color:#3fb950">■ hecha</span><span style="color:#d29922">■ en-curso</span><span style="color:#8b949e">■ pendiente</span><span style="color:#484f58">■ bloqueada</span></div>
+<div class="g"><svg viewBox="0 0 828 84" style="width:100%;height:auto;max-width:828px" xmlns="http://www.w3.org/2000/svg"><defs><marker id="f" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#6e7681"/></marker></defs><path d="M190,42.0 C208.0,42.0 208.0,42.0 226,42.0" fill="none" stroke="#6e7681" stroke-width="1.5" marker-end="url(#f)"/><path d="M396,42.0 C414.0,42.0 414.0,42.0 432,42.0" fill="none" stroke="#6e7681" stroke-width="1.5" marker-end="url(#f)"/><path d="M396,42.0 C517.0,42.0 517.0,42.0 638,42.0" fill="none" stroke="#6e7681" stroke-width="1.5" marker-end="url(#f)"/><path d="M602,42.0 C620.0,42.0 620.0,42.0 638,42.0" fill="none" stroke="#6e7681" stroke-width="1.5" marker-end="url(#f)"/><g><title>Diseñar la solución [hecha]</title><rect x="20" y="20" width="170" height="44" rx="8" fill="#161b22" stroke="#3fb950" stroke-width="2"/><text x="30" y="39" fill="#e6edf3" font-size="12">Diseñar la solución</text><text x="30" y="55" fill="#3fb950" font-size="10">Trabajo · hecha</text></g><g><title>Implementar la solución [en-curso]</title><rect x="226" y="20" width="170" height="44" rx="8" fill="#161b22" stroke="#d29922" stroke-width="2"/><text x="236" y="39" fill="#e6edf3" font-size="12">Implementar la solución</text><text x="236" y="55" fill="#d29922" font-size="10">Trabajo · en-curso</text></g><g><title>Escribir tests [bloqueada]</title><rect x="432" y="20" width="170" height="44" rx="8" fill="#161b22" stroke="#484f58" stroke-width="2"/><text x="442" y="39" fill="#e6edf3" font-size="12">Escribir tests</text><text x="442" y="55" fill="#484f58" font-size="10">Trabajo · bloqueada</text></g><g><title>Entregar al cliente [bloqueada]</title><rect x="638" y="20" width="170" height="44" rx="8" fill="#161b22" stroke="#484f58" stroke-width="2"/><text x="648" y="39" fill="#e6edf3" font-size="12">Entregar al cliente</text><text x="648" y="55" fill="#484f58" font-size="10">Trabajo · bloqueada</text></g></svg></div>
+<h2>Por áreas</h2>
+<section><h3>Trabajo <small>1/4</small></h3><ul><li class="bloqueada"><span class="m">🔒</span> <span class="p p1">P1</span> Entregar al cliente<div class="n">⛔ espera a: Implementar la solución, Escribir tests</div><div class="n">📅 2030-01-31</div></li><li class="en-curso"><span class="m">▶</span> <span class="p p1">P1</span> Implementar la solución<div class="n">Esta tarea está en curso.</div></li><li class="bloqueada"><span class="m">🔒</span> <span class="p p2">P2</span> Escribir tests<div class="n">⛔ espera a: Implementar la solución</div><div class="n">Sale bloqueada hasta que termine &#x27;Implementar la solución&#x27;.</div></li><li class="hecha"><span class="m">✔</span> <span class="p p1">P1</span> Diseñar la solución</li></ul></section><section><h3>Estudio <small>0/1</small></h3><ul><li class="pendiente"><span class="m">○</span> <span class="p p3">P3</span> Leer un artículo</li></ul></section><section><h3>Personal <small>0/1</small></h3><ul><li class="pendiente"><span class="m">○</span> <span class="p p2">P2</span> Hacer un recado</li></ul></section>
+</body></html>
