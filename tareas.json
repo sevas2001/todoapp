@@ -1,12 +1,249 @@
 {
-  "_formato": "Cada tarea: id (unico, minusculas-con-guiones), titulo, area, estado (pendiente|en-curso|hecha), bloqueada_por (lista de ids), prioridad (1 alta .. 3 baja), notas (opcional), fecha (opcional AAAA-MM-DD). Una tarea esta 'bloqueada' si alguna de bloqueada_por no esta hecha.",
-  "areas": ["Trabajo", "Estudio", "Personal"],
+  "_formato": "Cada tarea: id (unico, minusculas-con-guiones), titulo, area, estado (pendiente|en-curso|hecha), bloqueada_por (lista de ids), prioridad (1 alta .. 3 baja), notas (opcional), fecha (opcional AAAA-MM-DD). Una tarea esta 'bloqueada' si alguna de bloqueada_por no esta hecha. ATENCION: los datos de este archivo son FALSOS, solo de ejemplo.",
+  "areas": [
+    "Producto",
+    "Diseño",
+    "Desarrollo",
+    "Calidad",
+    "Lanzamiento",
+    "Admin"
+  ],
   "tareas": [
-    {"id": "ejemplo-diseno", "titulo": "Diseñar la solución", "area": "Trabajo", "estado": "hecha", "bloqueada_por": [], "prioridad": 1},
-    {"id": "ejemplo-implementar", "titulo": "Implementar la solución", "area": "Trabajo", "estado": "en-curso", "bloqueada_por": ["ejemplo-diseno"], "prioridad": 1, "notas": "Esta tarea está en curso."},
-    {"id": "ejemplo-tests", "titulo": "Escribir tests", "area": "Trabajo", "estado": "pendiente", "bloqueada_por": ["ejemplo-implementar"], "prioridad": 2, "notas": "Sale bloqueada hasta que termine 'Implementar la solución'."},
-    {"id": "ejemplo-entrega", "titulo": "Entregar al cliente", "area": "Trabajo", "estado": "pendiente", "bloqueada_por": ["ejemplo-implementar", "ejemplo-tests"], "prioridad": 1, "fecha": "2030-01-31"},
-    {"id": "ejemplo-leer", "titulo": "Leer un artículo", "area": "Estudio", "estado": "pendiente", "bloqueada_por": [], "prioridad": 3},
-    {"id": "ejemplo-recado", "titulo": "Hacer un recado", "area": "Personal", "estado": "pendiente", "bloqueada_por": [], "prioridad": 2}
+    {
+      "id": "definir-alcance",
+      "titulo": "Definir el alcance del MVP",
+      "area": "Producto",
+      "estado": "hecha",
+      "bloqueada_por": [],
+      "prioridad": 1,
+      "notas": "Datos de ejemplo: todo en este archivo es inventado."
+    },
+    {
+      "id": "investigar-competencia",
+      "titulo": "Investigar apps similares",
+      "area": "Producto",
+      "estado": "hecha",
+      "bloqueada_por": [
+        "definir-alcance"
+      ],
+      "prioridad": 2
+    },
+    {
+      "id": "disenar-wireframes",
+      "titulo": "Diseñar los wireframes principales",
+      "area": "Diseño",
+      "estado": "hecha",
+      "bloqueada_por": [
+        "definir-alcance"
+      ],
+      "prioridad": 1
+    },
+    {
+      "id": "guia-estilo",
+      "titulo": "Crear la guía de estilo (colores y tipografías)",
+      "area": "Diseño",
+      "estado": "hecha",
+      "bloqueada_por": [
+        "disenar-wireframes"
+      ],
+      "prioridad": 2
+    },
+    {
+      "id": "maquetas-hifi",
+      "titulo": "Maquetas de alta fidelidad",
+      "area": "Diseño",
+      "estado": "en-curso",
+      "bloqueada_por": [
+        "guia-estilo"
+      ],
+      "prioridad": 1,
+      "fecha": "2026-12-05",
+      "notas": "Falta la pantalla de ajustes."
+    },
+    {
+      "id": "configurar-repo",
+      "titulo": "Configurar repositorio y CI",
+      "area": "Desarrollo",
+      "estado": "hecha",
+      "bloqueada_por": [],
+      "prioridad": 1
+    },
+    {
+      "id": "modelo-datos",
+      "titulo": "Diseñar el modelo de datos",
+      "area": "Desarrollo",
+      "estado": "hecha",
+      "bloqueada_por": [
+        "definir-alcance"
+      ],
+      "prioridad": 1
+    },
+    {
+      "id": "api-usuarios",
+      "titulo": "API de usuarios y login",
+      "area": "Desarrollo",
+      "estado": "en-curso",
+      "bloqueada_por": [
+        "configurar-repo",
+        "modelo-datos"
+      ],
+      "prioridad": 1,
+      "fecha": "2026-12-01",
+      "notas": "Pendiente: recuperación de contraseña."
+    },
+    {
+      "id": "api-tareas",
+      "titulo": "API de tareas (CRUD)",
+      "area": "Desarrollo",
+      "estado": "pendiente",
+      "bloqueada_por": [
+        "api-usuarios"
+      ],
+      "prioridad": 1,
+      "fecha": "2026-12-12"
+    },
+    {
+      "id": "frontend-login",
+      "titulo": "Pantalla de login y registro",
+      "area": "Desarrollo",
+      "estado": "pendiente",
+      "bloqueada_por": [
+        "maquetas-hifi",
+        "api-usuarios"
+      ],
+      "prioridad": 2,
+      "fecha": "2026-12-15"
+    },
+    {
+      "id": "frontend-lista",
+      "titulo": "Pantalla principal con la lista de tareas",
+      "area": "Desarrollo",
+      "estado": "pendiente",
+      "bloqueada_por": [
+        "maquetas-hifi",
+        "api-tareas"
+      ],
+      "prioridad": 1,
+      "fecha": "2026-12-20"
+    },
+    {
+      "id": "notificaciones",
+      "titulo": "Notificaciones push",
+      "area": "Desarrollo",
+      "estado": "pendiente",
+      "bloqueada_por": [
+        "api-tareas"
+      ],
+      "prioridad": 3
+    },
+    {
+      "id": "tests-unitarios",
+      "titulo": "Tests unitarios del backend",
+      "area": "Calidad",
+      "estado": "pendiente",
+      "bloqueada_por": [
+        "api-usuarios"
+      ],
+      "prioridad": 2,
+      "fecha": "2026-12-10"
+    },
+    {
+      "id": "tests-e2e",
+      "titulo": "Tests de extremo a extremo",
+      "area": "Calidad",
+      "estado": "pendiente",
+      "bloqueada_por": [
+        "frontend-lista",
+        "tests-unitarios"
+      ],
+      "prioridad": 2,
+      "fecha": "2027-01-10"
+    },
+    {
+      "id": "revision-accesibilidad",
+      "titulo": "Revisión de accesibilidad",
+      "area": "Calidad",
+      "estado": "pendiente",
+      "bloqueada_por": [
+        "frontend-lista"
+      ],
+      "prioridad": 3
+    },
+    {
+      "id": "beta-cerrada",
+      "titulo": "Beta cerrada con 20 personas",
+      "area": "Lanzamiento",
+      "estado": "pendiente",
+      "bloqueada_por": [
+        "tests-e2e",
+        "revision-accesibilidad"
+      ],
+      "prioridad": 1,
+      "fecha": "2027-01-25",
+      "notas": "Fecha orientativa."
+    },
+    {
+      "id": "landing",
+      "titulo": "Landing page de la app",
+      "area": "Lanzamiento",
+      "estado": "pendiente",
+      "bloqueada_por": [
+        "guia-estilo"
+      ],
+      "prioridad": 2,
+      "fecha": "2026-11-20",
+      "notas": "Fecha vencida a propósito, para ver cómo se marca."
+    },
+    {
+      "id": "publicar-tiendas",
+      "titulo": "Publicar en las tiendas de apps",
+      "area": "Lanzamiento",
+      "estado": "pendiente",
+      "bloqueada_por": [
+        "beta-cerrada",
+        "landing"
+      ],
+      "prioridad": 1,
+      "fecha": "2027-02-15"
+    },
+    {
+      "id": "plan-marketing",
+      "titulo": "Plan de marketing del lanzamiento",
+      "area": "Lanzamiento",
+      "estado": "pendiente",
+      "bloqueada_por": [
+        "landing"
+      ],
+      "prioridad": 3
+    },
+    {
+      "id": "renovar-dominio",
+      "titulo": "Renovar el dominio",
+      "area": "Admin",
+      "estado": "pendiente",
+      "bloqueada_por": [],
+      "prioridad": 3,
+      "fecha": "2026-11-15",
+      "notas": "Vencida a propósito, para ver cómo se marca."
+    },
+    {
+      "id": "presupuesto",
+      "titulo": "Cerrar presupuesto del trimestre",
+      "area": "Admin",
+      "estado": "hecha",
+      "bloqueada_por": [],
+      "prioridad": 2
+    },
+    {
+      "id": "contratar-hosting",
+      "titulo": "Contratar el hosting de producción",
+      "area": "Admin",
+      "estado": "pendiente",
+      "bloqueada_por": [
+        "presupuesto"
+      ],
+      "prioridad": 2,
+      "fecha": "2026-12-08"
+    }
   ]
 }
